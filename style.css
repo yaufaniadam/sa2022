@@ -1,0 +1,88 @@
+/*
+Theme Name: Child of Suara Aisyiyah
+Theme URI: https://solusidesain.net/;
+Description: Child theme based on SuaraAisyiyah
+Author: solusidesain.net
+Version: 1.0
+Template: inhype
+*/
+
+:root{
+	--color-bg-topmenu-dark-bg: #3EA404 !important;
+}
+
+.header-menu-bg.menu_black .header-menu .menu-top-menu-container-toggle {
+    background: #3EA404 !important;
+}
+
+.sa-carousel-wrapper {
+    padding-top:50px;
+}
+.sa-carousel-wrapper.green {
+    background: #3EA404 !important; 
+}
+.sa-carousel-wrapper.green h3, 
+.sa-carousel-wrapper.green .inhype-post .post-title a,
+.sa-carousel-wrapper.green .inhype-post .post-date, 
+.sa-carousel-wrapper.green .inhype-post .post-read-time{
+	color: #f2f2f2;
+}
+
+.sa-carousel-wrapper.green .inhype-block-title {
+    border-bottom:2px solid #f2f2f2;
+}
+.sa-carousel-wrapper.green .inhype-post .post-info-dot{
+	border: 1px solid #f2f2f2;
+}
+
+.sa.inhype-list-post.inhype-list-small-post.inhype-post .inhype-post-image-wrapper {
+    width:160px;
+}
+
+/* .sa.inhype-post .inhype-post-image-wrapper .inhype-post-image {
+    height: 150px;
+} */
+
+
+.sa.inhype-post .inhype-post-image-wrapper {
+    background:transparent
+}
+
+
+.sa.inhype-list-post.inhype-post .post-title {
+    font-size:1.7rem;
+}
+
+
+.inhype-post .post-categories  {
+    text-transform: uppercase;
+
+}
+
+.inhype-post .post-categories a {
+    border-radius:10px;
+}
+
+.inhype-post .post-categories .cat-dot {
+    border-radius:3px;
+    width:10px;
+    height:10px;
+}
+
+.inhype-showcase3-block-wrapper .col-md-5 .inhype-post .post-categories {
+    display:inline-block;
+}
+
+/* .blog-enable-images-animations .inhype-post-image-wrapper .inhype-post-image::before, 
+.blog-enable-images-animations .inhype-image-wrapper .inhype-post-image::before {
+height:150px !important;
+} */
+
+.inhype-block-title h3 {
+    font-size: 24px !important;
+}
+
+.postbycat .inhype-block-title {
+    margin-left:0;
+    margin-right:0;
+}
