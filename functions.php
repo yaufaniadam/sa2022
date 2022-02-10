@@ -7,18 +7,6 @@ function inhype_enqueue_styles()
   wp_enqueue_style('inhype-child-style', get_stylesheet_directory_uri() . '/style.css', array('bootstrap'));
 }
 
-
-if (function_exists('register_sidebar'))
-  register_sidebar(
-    array(
-      'name' => 'Sidebar Widget',
-      'before_widget' => '<div class = "widgetizedArea">',
-      'after_widget' => '</div>',
-      'before_title' => '<h3>',
-      'after_title' => '</h3>',
-    )
-  );
-
 /**
  * Theme homepage blocks list
  */
@@ -506,4 +494,104 @@ if(!function_exists('inhype_posts_block_renderer_sacarousel')):
   endif;
 
 
+  remove_action('tgmpa_register', 'inhype_register_required_plugins');
 
+  
+if(!function_exists('inhype_register_required_plugins')):
+  function inhype_register_required_plugins() {
+  
+      /**
+       * Array of plugin arrays. Required keys are name and slug.
+       */
+      $plugins = array(
+          array(
+              'name'                  => esc_html__('InHype Custom Metaboxes', 'inhype'),
+              'slug'                  => 'cmb2',
+              'required'              => true,
+          ),
+          array(
+              'name'                  => esc_html__('InHype Theme Settings (Kirki Customizer Framework)', 'inhype'),
+              'slug'                  => 'kirki',
+              'required'              => true,
+          ),
+          array(
+              'name'                  => esc_html__('InHype Theme Addons', 'inhype'),
+              'slug'                  => 'inhype-theme-addons',
+              'source'                => get_template_directory() . '/inc/plugins/inhype-theme-addons.zip',
+              'required'              => true,
+              'version'               => '1.2.3',
+          ),
+          // array(
+          //     'name'                  => esc_html__('InHype AMP - Accelerated Mobile Pages support', 'inhype'),
+          //     'slug'                  => 'amp',
+          //     'required'              => false,
+          // ),
+          array(
+              'name'                  => esc_html__('Envato Market - Automatic theme updates', 'inhype'),
+              'slug'                  => 'envato-market',
+              'source'                => get_template_directory() . '/inc/plugins/envato-market.zip',
+              'required'              => false,
+              'version'               => '2.0.6',
+          ),
+          array(
+              'name'                  => esc_html__('InHype Page Navigation', 'inhype'),
+              'slug'                  => 'wp-pagenavi',
+              'required'              => false,
+          ),
+          // array(
+          //     'name'                  => esc_html__('InHype Login and Registration Popup', 'inhype'),
+          //     'slug'                  => 'ajax-login-and-registration-modal-popup',
+          //     'source'                => get_template_directory() . '/inc/plugins/ajax-login-and-registration-modal-popup.zip',
+          //     'required'              => false,
+          // ),
+          // array(
+          //     'name'                  => esc_html__('InHype Translation Manager', 'inhype'),
+          //     'slug'                  => 'loco-translate',
+          //     'required'              => false,
+          // ),
+          // array(
+          //     'name'                  => esc_html__('Instagram Feed', 'inhype'),
+          //     'slug'                  => 'instagram-feed',
+          //     'required'              => false,
+          // ),
+          // array(
+          //     'name'                  => esc_html__('MailChimp for WordPress', 'inhype'),
+          //     'slug'                  => 'mailchimp-for-wp',
+          //     'required'              => false,
+          // ),
+          // array(
+          //     'name'                  => esc_html__('WordPress LightBox', 'inhype'),
+          //     'slug'                  => 'responsive-lightbox',
+          //     'required'              => false
+          // ),
+          // array(
+          //     'name'                  => esc_html__('Contact Form 7', 'inhype'),
+          //     'slug'                  => 'contact-form-7',
+          //     'required'              => false,
+          // ),
+          // array(
+          //     'name'                  => esc_html__('Regenerate Thumbnails', 'inhype'),
+          //     'slug'                  => 'regenerate-thumbnails',
+          //     'required'              => false,
+          // )
+  
+      );
+  
+      /**
+       * Array of configuration settings.
+       */
+      $config = array(
+          'domain'            => 'inhype',
+          'default_path'      => '',
+          'menu'              => 'install-required-plugins',
+          'has_notices'       => true,
+          'dismissable'  => true,
+          'is_automatic'      => false,
+          'message'           => ''
+      );
+  
+      tgmpa( $plugins, $config );
+  
+  }
+  endif;
+  add_action('tgmpa_register', 'inhype_register_required_plugins');
